@@ -1,0 +1,32 @@
+<div class="main">
+    <div>
+        <div class="form-header">
+            <!-- <mat-icon class="lock">lock</mat-icon> -->
+            <h2 class="title">Log In</h2>
+        </div>
+        <form #myForm="ngForm" (ngSubmit)="submit(myForm)">
+            <div>
+                <mat-form-field class="width">
+                    <mat-label>Username</mat-label>
+                    <input matInput type="text" name="username" ngModel required #username="ngModel" />
+                    <mat-error style="color: red;" *ngIf="username.errors?.['required']">Name is
+                        required</mat-error>
+                </mat-form-field>
+            </div>
+            <div style="margin-top: 5px;">
+                <mat-form-field class="width">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" name="password" ngModel #password="ngModel" required />
+                    <mat-error style="color: red;" *ngIf="password.errors?.['required']">Password is
+                        required</mat-error>
+                </mat-form-field>
+
+            </div>
+            <p class="result">{{result}}</p>
+            <button class="btSubmit" mat-raised-button color="primary" type="submit"
+                [disabled]="myForm.invalid">Submit</button>
+        </form>
+
+    </div>
+
+</div>
