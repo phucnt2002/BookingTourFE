@@ -20,6 +20,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { ViewAllTourComponent } from './customer/view-all-tour/view-all-tour.component';
+import { ViewAllCusComponent } from './admin/view-all-cus/view-all-cus.component';
+import { LeadTourComponent } from './tour-guide/lead-tour/lead-tour.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatBadgeModule} from '@angular/material/badge'
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +42,9 @@ import { MatCardModule } from '@angular/material/card';
     TourGuideDefaultComponent,
     AdminDefaultComponent,
     CustomerDefaultComponent,
+    ViewAllTourComponent,
+    ViewAllCusComponent,
+    LeadTourComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +57,13 @@ import { MatCardModule } from '@angular/material/card';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
+    MatIconModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatDividerModule,
+    MatListModule,
+    MatGridListModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

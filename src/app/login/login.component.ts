@@ -10,27 +10,49 @@ import { ResponseObject } from '../models/response-object';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit{
-  username: string = ''
-  password: string = ''
-  result?: ResponseObject
-  constructor(private adminService: AdminService, private cusService: CustomerService, private tGuideService: TourGuideService, private router: Router) {
-
-  }
+export class LoginComponent implements OnInit {
+  username: string = '';
+  password: string = '';
+  result?: ResponseObject;
+  constructor(
+    private adminService: AdminService,
+    private cusService: CustomerService,
+    private tGuideService: TourGuideService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.submit
+    this.submit;
   }
 
   submit(myForm: NgForm) {
-    this.username = myForm.value.username
-    this.password = myForm.value.password
-    const account :Account = new Account(0, this.username, this.password, "", "")
-    this.adminService.login(account).subscribe(data => {
-    this.result = data
-    console.log(data)
+    this.username = myForm.value.username;
+    this.password = myForm.value.password;
+    const account: Account = new Account(
+      0,
+      this.username,
+      this.password,
+      '',
+      ''
+    );
+    this.adminService.login(account).subscribe((data) => {
+      this.result = data;
+      if (data.status === 'ok' && data.data && data.data.role) {
+        let role = data.data.role;
+        localStorage.setItem('currentUser', JSON.stringify(data.data));
+        if (role.includes('admin')) {
+          this.router?.navigateByUrl('admin/view-all-customer');
+        }
+        if (role.includes('customer')) {
+          this.router?.navigateByUrl('customer/view-all-tour');
+        }
+        if (role.includes('tourguide')) {
+          this.router?.navigateByUrl('tourguide/view-list-customer');
+        }
+      } else {
+      }
       // if (data.getData().role.includes("admin")) {
       //   this.router?.navigateByUrl("operator/view-list-customer")
       // }
@@ -40,6 +62,6 @@ export class LoginComponent implements OnInit{
       // if (data.includes("tourguide")) {
       //   this.router?.navigateByUrl("customer/cusdetail")
       // }
-    })
+    });
   }
 }

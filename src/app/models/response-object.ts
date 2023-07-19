@@ -1,36 +1,41 @@
 export class ResponseObject {
-    private status: string;
-    private message: string;
-    private data: any;
-  
-    constructor(status: string, message: string, data: any) {
-      this.status = status;
-      this.message = message;
-      this.data = data;
-    }
-  
-    public getStatus(): string {
-      return this.status;
-    }
-  
-    public setStatus(status: string): void {
-      this.status = status;
-    }
-  
-    public getMessage(): string {
-      return this.message;
-    }
-  
-    public setMessage(message: string): void {
-      this.message = message;
-    }
-  
-    public getData(): any {
-      return this.data;
-    }
-  
-    public setData(data: any): void {
-      this.data = data;
-    }
+  private _status: string;
+  private _message: string;
+  private _data: any;
+
+  constructor(status: string, message: string, data: any) {
+    this._status = status;
+    this._message = message;
+    this._data = data;
   }
-  
+
+  // Getter for status
+  get status(): string {
+    return this._status;
+  }
+
+  // Setter for status
+  set status(status: string) {
+    this._status = status;
+  }
+
+  // Getter for message
+  get message(): string {
+    return this._message;
+  }
+
+  // Setter for message
+  set message(message: string) {
+    this._message = message;
+  }
+
+  // Getter for data
+  get data(): any {
+    return this._data;
+  }
+
+  // Setter for data
+  set data(data: any) {
+    this._data = data;
+  }
+}

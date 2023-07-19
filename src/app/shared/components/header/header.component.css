@@ -1,0 +1,7 @@
+ul li{
+    list-style: none;
+}
+
+.header{
+    justify-content: space-between;
+}
