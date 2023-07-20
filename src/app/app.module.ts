@@ -14,7 +14,7 @@ import { TourGuideDefaultComponent } from './layout/tour-guide/tour-guide-defaul
 import { AdminDefaultComponent } from './layout/admin/admin-default/admin-default.component';
 import { CustomerDefaultComponent } from './layout/customer/customer-default/customer-default.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -30,6 +30,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatBadgeModule} from '@angular/material/badge'
+import { DescriptionLimitPipe } from './models/description-limit-pipe';
+import { BookTourComponent } from './customer/book-tour/book-tour.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +47,8 @@ import {MatBadgeModule} from '@angular/material/badge'
     ViewAllTourComponent,
     ViewAllCusComponent,
     LeadTourComponent,
+    DescriptionLimitPipe,
+    BookTourComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +67,8 @@ import {MatBadgeModule} from '@angular/material/badge'
     MatDividerModule,
     MatListModule,
     MatGridListModule,
-    MatBadgeModule
+    MatBadgeModule,
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

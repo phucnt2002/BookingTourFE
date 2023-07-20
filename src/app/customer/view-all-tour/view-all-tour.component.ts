@@ -3,6 +3,7 @@ import { ResponseObject } from 'src/app/models/response-object';
 import { Tour } from 'src/app/models/tour';
 import { CustomerService } from 'src/app/services/customer.service';
 import { Location } from 'src/app/models/location';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-view-all-tour',
   templateUrl: './view-all-tour.component.html',
@@ -11,7 +12,7 @@ import { Location } from 'src/app/models/location';
 export class ViewAllTourComponent implements OnInit {
   result?: Tour[];
 
-  constructor(private customerService: CustomerService) {}
+  constructor(private customerService: CustomerService, private router: Router) {}
 
   ngOnInit(): void {
     this.onReady();
@@ -29,11 +30,13 @@ export class ViewAllTourComponent implements OnInit {
   }
 
   getLocation(locations: Location[]): string {
-    console.log(locations)
-    debugger
     if (!locations || locations.length === 0) {
       return 'N/A';
     }
     return locations.map(location => location.country).join(', ');
+  }
+
+  bookTour(item: Tour) {
+    this.router.navigate(['/customer/book-tour'], { state: { item: item } });
   }
 }

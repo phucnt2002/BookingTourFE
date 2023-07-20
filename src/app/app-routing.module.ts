@@ -7,6 +7,7 @@ import { TourGuideDefaultComponent } from './layout/tour-guide/tour-guide-defaul
 import { ViewAllTourComponent } from './customer/view-all-tour/view-all-tour.component';
 import { LeadTourComponent } from './tour-guide/lead-tour/lead-tour.component';
 import { ViewAllCusComponent } from './admin/view-all-cus/view-all-cus.component';
+import { BookTourComponent } from './customer/book-tour/book-tour.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -18,6 +19,10 @@ const routes: Routes = [
       {
         path: 'view-all-tour',
         component: ViewAllTourComponent
+      },
+      {
+        path: 'book-tour',
+        component: BookTourComponent
       },
     ]
   },

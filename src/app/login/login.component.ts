@@ -30,13 +30,9 @@ export class LoginComponent implements OnInit {
   submit(myForm: NgForm) {
     this.username = myForm.value.username;
     this.password = myForm.value.password;
-    const account: Account = new Account(
-      0,
-      this.username,
-      this.password,
-      '',
-      ''
-    );
+    const account: Account = new Account();
+    account.password = this.password;
+    account.userName = this.username;
     this.adminService.login(account).subscribe((data) => {
       this.result = data;
       if (data.status === 'ok' && data.data && data.data.role) {
@@ -52,6 +48,7 @@ export class LoginComponent implements OnInit {
           this.router?.navigateByUrl('tourguide/view-list-customer');
         }
       } else {
+        console.log(data)
       }
       // if (data.getData().role.includes("admin")) {
       //   this.router?.navigateByUrl("operator/view-list-customer")
@@ -62,6 +59,8 @@ export class LoginComponent implements OnInit {
       // if (data.includes("tourguide")) {
       //   this.router?.navigateByUrl("customer/cusdetail")
       // }
+    }, (err:any)=>{
+      console.log(err)
     });
   }
 }

@@ -15,3 +15,9 @@
 .time{
     font-weight: 300;
 }
+
+.description{
+    min-height: 80px;
+    text-align: justify;
+    margin-top: 10px;
+}
