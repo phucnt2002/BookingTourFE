@@ -1,0 +1,12 @@
+<mat-card class="container">
+  <h1 mat-dialog-title>{{data.name}}</h1>
+  <div mat-dialog-content>
+    <p>{{data.message}}</p>
+  </div>
+  <div class="icon-container">
+    <mat-icon [ngStyle]="{ color: data.color }" class="icon">{{data.icon}}</mat-icon>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button cdkFocusInitial (click)="onNoClick()">Ok</button>
+  </div>
+</mat-card>

@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
         let role = data.data.role;
         localStorage.setItem('currentUser', JSON.stringify(data.data));
         if (role.includes('admin')) {
-          this.router?.navigateByUrl('admin/view-all-customer');
+          this.router?.navigateByUrl('admin/create-tour');
         }
         if (role.includes('customer')) {
           this.router?.navigateByUrl('customer/view-all-tour');

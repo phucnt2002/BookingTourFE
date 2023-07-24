@@ -32,6 +32,13 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatBadgeModule} from '@angular/material/badge'
 import { DescriptionLimitPipe } from './models/description-limit-pipe';
 import { BookTourComponent } from './customer/book-tour/book-tour.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './aDialog/dialog/dialog.component';
+import { BookedtourComponent } from './customer/bookedtour/bookedtour.component';
+import { MatTableModule } from '@angular/material/table';
+import { EditBookingDialogComponent } from './aDialog/edit-booking-dialog/edit-booking-dialog.component';
+import { CreateTourComponent } from './admin/create-tour/create-tour.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +55,12 @@ import { BookTourComponent } from './customer/book-tour/book-tour.component';
     ViewAllCusComponent,
     LeadTourComponent,
     DescriptionLimitPipe,
-    BookTourComponent
+    BookTourComponent,
+    DialogComponent,
+    BookedtourComponent,
+    EditBookingDialogComponent,
+    CreateTourComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -68,7 +80,11 @@ import { BookTourComponent } from './customer/book-tour/book-tour.component';
     MatListModule,
     MatGridListModule,
     MatBadgeModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule ,
+    MatDialogModule,
+    MatTableModule,
+    AngularEditorModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

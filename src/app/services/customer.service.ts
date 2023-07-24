@@ -19,4 +19,12 @@ export class CustomerService {
   createBooking(customerId: number, tourdId: number, booking: Booking): Observable<ResponseObject>{
     return this.http.post<ResponseObject>(`${this.url}/customer/createBooking?tourId=${tourdId}&customerId=${customerId}`, booking);
   }
+
+  getAllBooked(id: number){
+    return this.http.get<ResponseObject>(`${this.url}/customer/getBookingByCustomerId/${id}`)
+  }
+
+  cancelBooking(id: number){
+    return this.http.delete<ResponseObject>(`${this.url}/customer/cancelBooking/${id}`)
+  }
 }

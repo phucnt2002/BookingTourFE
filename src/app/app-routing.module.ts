@@ -8,6 +8,8 @@ import { ViewAllTourComponent } from './customer/view-all-tour/view-all-tour.com
 import { LeadTourComponent } from './tour-guide/lead-tour/lead-tour.component';
 import { ViewAllCusComponent } from './admin/view-all-cus/view-all-cus.component';
 import { BookTourComponent } from './customer/book-tour/book-tour.component';
+import { BookedtourComponent } from './customer/bookedtour/bookedtour.component';
+import { CreateTourComponent } from './admin/create-tour/create-tour.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -24,6 +26,10 @@ const routes: Routes = [
         path: 'book-tour',
         component: BookTourComponent
       },
+      {
+        path: 'booked-tour',
+        component: BookedtourComponent
+      }
     ]
   },
   {
@@ -41,8 +47,12 @@ const routes: Routes = [
     component: AdminDefaultComponent,
     children: [
       {
-        path: 'view-all-customer',
-        component: ViewAllCusComponent
+        path: 'create-tour',
+        component: CreateTourComponent
+      },
+      {
+        path: 'create-tour',
+        component: CreateTourComponent
       },
     ]
   },
