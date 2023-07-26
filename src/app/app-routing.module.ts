@@ -51,8 +51,8 @@ const routes: Routes = [
         component: CreateTourComponent
       },
       {
-        path: 'create-tour',
-        component: CreateTourComponent
+        path: 'view-all-customer',
+        component: ViewAllCusComponent
       },
     ]
   },

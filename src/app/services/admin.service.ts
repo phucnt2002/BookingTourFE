@@ -15,4 +15,8 @@ export class AdminService {
   login(account: Account): Observable<ResponseObject>{
     return this.http.post<ResponseObject>(`${this.url}/login`, account);
   }
+
+  getAccount():Observable<ResponseObject>{
+    return this.http.get<ResponseObject>(`${this.url}/getAccount`);
+  }
 }

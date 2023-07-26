@@ -14,11 +14,4 @@ export class TourGuide {
     this.guideBio = '';
     this.account = new Account();
   }
-
-  // constructor(id: number, guideName: string, guideBio: string, account: Account) {
-  //   this.id = id;
-  //   this.guideName = guideName;
-  //   this.guideBio = guideBio;
-  //   this.account = account;
-  // }
 }

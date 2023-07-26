@@ -13,6 +13,7 @@ export class Tour {
   quality: number;
   timeStart: Date;
   timeEnd: Date;
+  imgURL: string;
   booking: Booking[];
   tourGuide: TourGuide;
   location: Location[];
@@ -26,6 +27,7 @@ export class Tour {
     this.quality = 0;
     this.timeStart = new Date();
     this.timeEnd = new Date();
+    this.imgURL = '';
     this.booking = [];
     this.tourGuide = new TourGuide();
     this.location = [];

@@ -39,6 +39,9 @@ import { MatTableModule } from '@angular/material/table';
 import { EditBookingDialogComponent } from './aDialog/edit-booking-dialog/edit-booking-dialog.component';
 import { CreateTourComponent } from './admin/create-tour/create-tour.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatNativeDateModule} from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,7 +86,10 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     ReactiveFormsModule ,
     MatDialogModule,
     MatTableModule,
-    AngularEditorModule
+    AngularEditorModule,
+    MatTooltipModule,
+    MatNativeDateModule,
+    MatDatepickerModule
     
   ],
   providers: [],
