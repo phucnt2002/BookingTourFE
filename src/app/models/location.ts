@@ -1,19 +1,17 @@
 import { Tour } from './tour';
 
 export class Location {
-  id: number;
+  id!: number;
   locationName: string;
   address: string;
   city: string;
   country: string;
-  tours: Tour[];
+  tours!: Tour[];
 
-  constructor(id: number, locationName: string, address: string, city: string, country: string, tours: Tour[]) {
-    this.id = id;
-    this.locationName = locationName;
-    this.address = address;
-    this.city = city;
-    this.country = country;
-    this.tours = tours;
+  constructor() {
+    this.locationName = "";
+    this.address = "";
+    this.city = "";
+    this.country = "";
   }
 }

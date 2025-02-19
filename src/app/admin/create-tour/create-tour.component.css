@@ -1,22 +1,37 @@
 .container {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    width: 70%;
-  }
-  .title{
-    align-items: center;
-    text-align: center;
-    padding: 20px 0;
-  }
-  .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  width: 70%;
+}
+
+.title {
+  align-items: center;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.img-uploaded {
+  width: 400px;
+  height: auto;
+  align-items: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-add-location {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -10,6 +10,7 @@ import { ViewAllCusComponent } from './admin/view-all-cus/view-all-cus.component
 import { BookTourComponent } from './customer/book-tour/book-tour.component';
 import { BookedtourComponent } from './customer/bookedtour/bookedtour.component';
 import { CreateTourComponent } from './admin/create-tour/create-tour.component';
+import { ManageTourComponent } from './admin/manage-tour/manage-tour.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -53,6 +54,10 @@ const routes: Routes = [
       {
         path: 'view-all-customer',
         component: ViewAllCusComponent
+      },
+      {
+        path: 'manage-tour',
+        component: ManageTourComponent
       },
     ]
   },

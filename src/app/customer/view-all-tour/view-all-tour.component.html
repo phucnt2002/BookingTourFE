@@ -1,4 +1,4 @@
-<mat-grid-list [cols]="2" rowHeight="2:3">
+<mat-grid-list [cols]="nColum" rowHeight="2:3">
     <mat-grid-tile *ngFor="let item of result">
         <mat-card class="example-card">
             <mat-card-header>
@@ -9,7 +9,7 @@
                 <mat-card-title>{{item.tourName}}</mat-card-title>
                 <mat-card-subtitle>Dog Breed</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+            <img class="img" mat-card-image [src]="item.imgURL"
                 alt="Photo of a Shiba Inu">
             <mat-card-content class="description">
                 {{ item.description | descriptionLimit:30 }}

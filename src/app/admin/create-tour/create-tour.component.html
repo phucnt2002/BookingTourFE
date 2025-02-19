@@ -1,69 +1,152 @@
-<mat-card class="container">
-    <mat-card-title class="title">Fill information</mat-card-title>
-    <div class="example-form">
-        <mat-form-field class="example-full-width">
-            <mat-label>Tour name</mat-label>
-            <input matInput placeholder="Ex. VietNam 3days 2nights" [(ngModel)]="tourName">
-        </mat-form-field>
-    </div>
+<form class="example-form" class="container">
+    <mat-card>
+        <mat-card-title class="title">Fill information</mat-card-title>
+        <div class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Tour name</mat-label>
+                <input matInput placeholder="Ex. VietNam 3days 2nights" [(ngModel)]="tourName" name="tourName"
+                    [formControl]="tourNameFormControl" [errorStateMatcher]="matcher">
+                <mat-hint>Errors appear instantly!</mat-hint>
+                <mat-error *ngIf="tourNameFormControl.hasError('min') && !tourNameFormControl.hasError('required')">
+                    Please enter tour name
+                </mat-error>
+                <mat-error *ngIf="tourNameFormControl.hasError('required')">
+                    Tour name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
 
-    <div class="example-form">
-        <mat-form-field class="example-full-width">
-            <mat-label>Description</mat-label>
-            <input matInput placeholder="Ex. VietNam 3days 2nights" [(ngModel)]="description">
-        </mat-form-field>
-    </div>
+        <div class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Description</mat-label>
+                <input matInput placeholder="Ex. " [(ngModel)]="description" name="description"
+                    [formControl]="descriptionFormControl" [errorStateMatcher]="matcher">
+                <mat-hint>Errors appear instantly!</mat-hint>
+                <mat-error *ngIf="descriptionFormControl.hasError('min') && !descriptionFormControl.hasError('required')">
+                    Please enter Description tour
+                </mat-error>
+                <mat-error *ngIf="descriptionFormControl.hasError('required')">
+                    Descriptionis <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
 
-    <div class="example-form">
-        <mat-form-field class="example-full-width">
-            <mat-label>Price</mat-label>
-            <input matInput placeholder="Ex. VietNam 3days 2nights" [(ngModel)]="price">
-        </mat-form-field>
-    </div>
+        <div class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Price</mat-label>
+                <input matInput placeholder="Ex. 3000$" [(ngModel)]="price" name="price"
+                    [formControl]="priceFormControl" [errorStateMatcher]="matcher">
+                <mat-hint>Errors appear instantly!</mat-hint>
+                <mat-error *ngIf="priceFormControl.hasError('pattern') && !priceFormControl.hasError('required')">
+                    Please enter Price tour
+                </mat-error>
+                <mat-error *ngIf="priceFormControl.hasError('required')">
+                    Price is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
 
-    <div class="example-form">
-        <mat-form-field class="example-full-width">
-            <mat-label>Duration</mat-label>
-            <input matInput placeholder="Ex. VietNam 3days 2nights" [(ngModel)]="duration">
-        </mat-form-field>
-    </div>
+        <div class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Duration</mat-label>
+                <input matInput placeholder="Ex. 2" [(ngModel)]="duration" name="duration"
+                    [formControl]="durationFormControl" [errorStateMatcher]="matcher">
+                <mat-hint>Errors appear instantly!</mat-hint>
+                <mat-error *ngIf="durationFormControl.hasError('pattern') && !durationFormControl.hasError('required')">
+                    Please enter Duration tour
+                </mat-error>
+                <mat-error *ngIf="durationFormControl.hasError('required')">
+                    Duration is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
 
-    <div class="example-form">
-        <mat-form-field class="example-full-width">
-            <mat-label>Quality</mat-label>
-            <input matInput placeholder="Ex. VietNam 3days 2nights" [(ngModel)]="quality">
-        </mat-form-field>
-    </div>
+        <div class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Quality</mat-label>
+                <input matInput placeholder="Ex. 3" [(ngModel)]="quality" name="quality"
+                    [formControl]="qualityFormControl" [errorStateMatcher]="matcher">
+                <mat-hint>Errors appear instantly!</mat-hint>
+                <mat-error *ngIf="qualityFormControl.hasError('pattern') && !qualityFormControl.hasError('required')">
+                    Please enter Quality tour
+                </mat-error>
+                <mat-error *ngIf="qualityFormControl.hasError('required')">
+                    Quality is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
 
-    <div class="example-form">
-        <mat-form-field class="example-full-width">
-            <mat-label>Enter a date range</mat-label>
-            <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
-                <input matStartDate formControlName="start" placeholder="Start date">
-                <input matEndDate formControlName="end" placeholder="End date">
-            </mat-date-range-input>
-            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-date-range-picker #picker></mat-date-range-picker>
+        <div class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Enter a date range</mat-label>
+                <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                    <input matStartDate formControlName="start" placeholder="Start date">
+                    <input matEndDate formControlName="end" placeholder="End date">
+                </mat-date-range-input>
+                <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
 
-            <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
-            <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
-        </mat-form-field>
+                <mat-error *ngIf="range.controls.start.hasError('required')">Start date is required</mat-error>
+                <mat-error *ngIf="range.controls.end.hasError('required')">End date is required</mat-error>
 
-        <p>Selected range: {{range.value | json}}</p>
-    </div>
+            </mat-form-field>
 
-    <button mat-fab extended color="primary" (click)="onUpload()">
-        <mat-icon>cloud_upload</mat-icon>
-        Upload Image
-      <input type="file" (change)="onFileSelected($event)" />
-      </button>
+            <p>Selected range: {{range.value | json}}</p>
+        </div>
+        <div class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Cities</mat-label>
+                <mat-chip-grid #chipGrid aria-label="City selection">
+                    <mat-chip-row *ngFor="let city of cities" (removed)="remove(city)">
+                        {{city}}
+                        <button matChipRemove [attr.aria-label]="'remove ' + city">
+                            <mat-icon>cancel</mat-icon>
+                        </button>
+                    </mat-chip-row>
+                </mat-chip-grid>
+                <input placeholder="Select cities..." #cityInput [formControl]="cityCtrl" [matChipInputFor]="chipGrid"
+                    [matAutocomplete]="auto" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    (matChipInputTokenEnd)="add($event)" />
+                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                    <mat-option *ngFor="let city of filteredCities | async" [value]="city">
+                        {{city}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+            <p>
+                <strong>The following cities are entered:</strong> {{cityCtrl.value}}
+            </p>
+        </div>
+        <div class="btn-add-location">
+            <button mat-fab extended color="primary" (click)="openDialog()">
+                <mat-icon>add</mat-icon>
+                New Location
+              </button>
+        </div>
+        <div class="input-group mb-3">
+            <div class="custom-file">
+                <input [formControl]="imgURLFormControl" type="file" class="custom-file-input" id="inputGroupFile02" (change)="onFileSelected($event)">
+            </div>
+            <mat-error *ngIf="imgURLFormControl.hasError('pattern') && !imgURLFormControl.hasError('required')">
+                Please choose image
+            </mat-error>
+            <mat-error *ngIf="imgURLFormControl.hasError('required')">
+                Image is <strong>required</strong>
+            </mat-error>
+        </div>
+        <img *ngIf="this.tour.imgURL" [src]="this.tour.imgURL" alt="Uploaded image" class="img-uploaded">
 
-</mat-card>
-
-
-
+        <div class="example-form" >
+            <button mat-fab extended color="primary" (click)="saveTour()" [disabled]="!tourForm.valid">
+                <mat-icon>save</mat-icon>
+                Save
+            </button>
+        </div>
+    </mat-card>
+</form>
 <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
 <p>
     {{htmlContent}}
 </p>
+<!-- <app-map></app-map> -->

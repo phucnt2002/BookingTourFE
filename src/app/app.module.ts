@@ -26,10 +26,10 @@ import { LeadTourComponent } from './tour-guide/lead-tour/lead-tour.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatListModule} from '@angular/material/list';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatBadgeModule} from '@angular/material/badge'
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatBadgeModule } from '@angular/material/badge';
 import { DescriptionLimitPipe } from './models/description-limit-pipe';
 import { BookTourComponent } from './customer/book-tour/book-tour.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -39,9 +39,17 @@ import { MatTableModule } from '@angular/material/table';
 import { EditBookingDialogComponent } from './aDialog/edit-booking-dialog/edit-booking-dialog.component';
 import { CreateTourComponent } from './admin/create-tour/create-tour.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatNativeDateModule} from '@angular/material/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MapComponent } from './map/map.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { CommonModule } from '@angular/common';
+import { HttpClientJsonpModule } from '@angular/common/http';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatChipsModule } from '@angular/material/chips';
+import { AddLocationDialogComponent } from './aDialog/add-location-dialog/add-location-dialog.component';
+import { ManageTourComponent } from './admin/manage-tour/manage-tour.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +71,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     BookedtourComponent,
     EditBookingDialogComponent,
     CreateTourComponent,
-    
+    MapComponent,
+    AddLocationDialogComponent,
+    ManageTourComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,16 +93,20 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatListModule,
     MatGridListModule,
     MatBadgeModule,
-    ReactiveFormsModule ,
+    ReactiveFormsModule,
     MatDialogModule,
     MatTableModule,
     AngularEditorModule,
     MatTooltipModule,
     MatNativeDateModule,
-    MatDatepickerModule
-    
+    MatDatepickerModule,
+    GoogleMapsModule,
+    CommonModule,
+    HttpClientJsonpModule,
+    MatAutocompleteModule,
+    MatChipsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
