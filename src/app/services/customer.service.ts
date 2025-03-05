@@ -8,8 +8,8 @@ import { Booking } from '../models/booking';
   providedIn: 'root'
 })
 export class CustomerService {
-  url = "http://localhost:9090/bookingtour"
-  
+  url = "http://backend:8080/booking-api/bookingtour"
+
   constructor(private http: HttpClient) { }
 
   getAllTour(): Observable<ResponseObject>{
