@@ -10,7 +10,7 @@ import { Location } from '../models/location';
   providedIn: 'root'
 })
 export class AdminService {
-  url = "http://backend:8080/booking-api/bookingtour/admin"
+  url = "/booking-api/bookingtour/admin"
 
   constructor(private http: HttpClient) { }
 

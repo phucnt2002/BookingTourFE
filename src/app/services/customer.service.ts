@@ -8,7 +8,7 @@ import { Booking } from '../models/booking';
   providedIn: 'root'
 })
 export class CustomerService {
-  url = "http://backend:8080/booking-api/bookingtour"
+  url = "/booking-api/bookingtour"
 
   constructor(private http: HttpClient) { }
 
