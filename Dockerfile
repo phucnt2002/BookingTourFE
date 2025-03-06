@@ -22,7 +22,7 @@ RUN rm -rf /usr/share/nginx/html/*
 
 # Copy the Angular build from the first stage to Nginx's web directory
 COPY --from=build /app/dist/frontend /usr/share/nginx/html
-
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 # Expose port 80
 EXPOSE 80
 
